@@ -29,7 +29,7 @@ jobs:
         id: version
         shell: bash
         run: |
-          node -p "'conan_version=' + require('./package.json').xpack.properties.versionconan" >> $GITHUB_OUTPUT
+          node -p "'conan_version=' + require('./package.json').xpack.properties.versionConan" >> $GITHUB_OUTPUT
           node -p "'arch=' + os.platform() + '-' + os.arch()" >> $GITHUB_OUTPUT
       - run: npm install
       - run: npx xpm install
@@ -64,7 +64,7 @@ jobs:
         id: version
         shell: bash
         run: |
-          node -p "'conan_version=' + require('./package.json').xpack.properties.versionconan" >> $GITHUB_OUTPUT
+          node -p "'conan_version=' + require('./package.json').xpack.properties.versionConan" >> $GITHUB_OUTPUT
       - uses: actions/download-artifact@v4
         with:
           path: ${{ github.workspace }}
