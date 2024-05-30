@@ -65,7 +65,7 @@
         "{{ properties.commandPostInstall[os.platform] }}"
       ],
       "test": [
-        ".{{ path.sep }}content{{ path.sep }}bin{{ path.sep }}conan --help"
+        ".{{ path.sep }}content{{ path.sep }}bin{{ path.sep }}conan version"
       ]
     },
     "devDependencies": {

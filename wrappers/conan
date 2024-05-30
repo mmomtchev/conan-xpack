@@ -3,6 +3,22 @@
 import re
 import sys
 import os
+
+if 'CONAN_HOME' not in os.environ:
+    user_home = os.environ['HOME'] if 'HOME' in os.environ else '/tmp'
+    if sys.platform == 'linux':
+        conan_home = os.path.join(user_home, '.cache', 'hadron')
+    elif sys.platform == 'darwin':
+        conan_home = os.path.join(user_home, 'Library', 'Caches', 'hadron')
+    else:
+        conan_home = '/tmp'
+        print(f'Warning, unsupported platform {sys.platform}')
+else:
+    conan_home = os.environ['CONAN_HOME']
+
+print(f'conan building packages in {conan_home}')
+print('  This directory can grow to a considerable size')
+
 file_path = os.path.realpath(__file__)
 sys.path.append(os.path.dirname(os.path.dirname(file_path)))
 from conans.conan import run
