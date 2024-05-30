@@ -13,6 +13,7 @@ if 'CONAN_HOME' not in os.environ:
     else:
         conan_home = '/tmp'
         print(f'Warning, unsupported platform {sys.platform}')
+    os.environ['CONAN_HOME'] = conan_home
 else:
     conan_home = os.environ['CONAN_HOME']
 
@@ -21,7 +22,13 @@ print('  This directory can grow to a considerable size')
 
 file_path = os.path.realpath(__file__)
 sys.path.append(os.path.dirname(os.path.dirname(file_path)))
-from conans.conan import run
+from conans import conan
+
+if not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):
+    r = conan.main(['profile', 'detect'])
+    if r != 0:
+        sys.exit(r)
+
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
-    sys.exit(run())
+    sys.exit(conan.run())
