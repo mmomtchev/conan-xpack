@@ -1,0 +1,64 @@
+{
+  "name": "@mmomtchev/conan-xpack",
+  "version": "2.3.2",
+  "description": "A xPack with conan",
+  "scripts": {
+    "postversion": "git push && git push --tags && node ./publish.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmomtchev/conan-xpack.git"
+  },
+  "keywords": [
+    "conan",
+    "node-api",
+    "swig",
+    "xpack"
+  ],
+  "author": "Momtchil Momtchev <momtchil@momtchev.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmomtchev/conan-xpack/issues"
+  },
+  "homepage": "https://github.com/mmomtchev/conan-xpack#readme",
+  "xpack": {
+    "minimumXpmRequired": "0.19.1",
+    "binaries": {
+      "destination": "./.content",
+      "rootUrl": "https://github.com/mmomtchev/conan-xpack/releases/download",
+      "skip": 1,
+      "platforms": {}
+    },
+    "bin": {
+      "conan": "./.content/bin/conan"
+    },
+    "properties": {
+      "versionConan": "2.3.2",
+      "commandInstall": "python -m pip install --target content conan=={{ properties.versionConan }}",
+      "commandPostInstall": {
+        "win32": "copy wrappers\\conan.cmd content\\bin\\conan.cmd && ren content\\bin\\conan.exe _conan.exe",
+        "linux": "cp wrappers/conan content/bin/conan",
+        "darwin": "cp wrappers/conan content/bin/conan"
+      }
+    },
+    "actions": {
+      "build": [
+        "{{ properties.commandInstall }}",
+        "{{ properties.commandPostInstall[os.platform] }}"
+      ],
+      "test": [
+        ".{{ path.sep }}content{{ path.sep }}bin{{ path.sep }}conan --help"
+      ]
+    },
+    "devDependencies": {
+      "@mmomtchev/python-xpack": {
+        "specifier": "3.12.3-2",
+        "local": "link",
+        "platforms": "all"
+      }
+    }
+  },
+  "dependencies": {
+    "xpm": "^0.19.1"
+  }
+}

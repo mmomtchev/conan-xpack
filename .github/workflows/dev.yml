@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  install_conan:
+    runs-on: ${{ matrix.platform }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - ubuntu-22.04
+          - macos-11
+          - macos-14
+          - windows-2019
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - run: npm install
+      - run: npx xpm install
+      - run: npx xpm run build
+      - name: Test
+        run: npx xpm run test
