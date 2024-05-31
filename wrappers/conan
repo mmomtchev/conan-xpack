@@ -10,6 +10,9 @@ if 'CONAN_HOME' not in os.environ:
         conan_home = os.path.join(user_home, '.cache', 'hadron')
     elif sys.platform == 'darwin':
         conan_home = os.path.join(user_home, 'Library', 'Caches', 'hadron')
+    elif sys.platform == 'win32':
+        user_home = os.environ['LOCALAPPDATA'] if 'LOCALAPPDATA' in os.environ else '/tmp'
+        conan_home = os.path.join(user_home, 'hadron')
     else:
         conan_home = '/tmp'
         print(f'Warning, unsupported platform {sys.platform}')
@@ -24,10 +27,13 @@ file_path = os.path.realpath(__file__)
 sys.path.append(os.path.dirname(os.path.dirname(file_path)))
 from conans import conan
 
-if not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):
-    r = conan.main(['profile', 'detect'])
-    if r != 0:
-        sys.exit(r)
+print(sys.argv)
+if 'profile' not in sys.argv and not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):
+    import subprocess
+    print([__file__, 'profile', 'detect'])
+    r = subprocess.run([__file__, 'profile', 'detect'])
+    if r.returncode != 0:
+        sys.exit(r.returncode)
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
