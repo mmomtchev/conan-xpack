@@ -27,10 +27,8 @@ file_path = os.path.realpath(__file__)
 sys.path.append(os.path.dirname(os.path.dirname(file_path)))
 from conans import conan
 
-print(sys.argv)
 if 'profile' not in sys.argv and not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):
     import subprocess
-    print([__file__, 'profile', 'detect'])
     r = subprocess.run([__file__, 'profile', 'detect'])
     if r.returncode != 0:
         sys.exit(r.returncode)
