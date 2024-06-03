@@ -24,7 +24,7 @@ print(f'conan building packages in {conan_home}', file=sys.stderr)
 print('  This directory can grow to a considerable size', file=sys.stderr)
 
 file_path = os.path.realpath(__file__)
-sys.path.append(os.path.dirname(os.path.dirname(file_path)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(file_path)))
 from conans import conan
 
 if 'profile' not in sys.argv and not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):

@@ -54,7 +54,7 @@
       "versionConan": "2.3.2",
       "commandInstall": "python -m pip install --target content conan=={{ properties.versionConan }}",
       "pythonPath": "xpacks/@mmomtchev/python-xpack/.content",
-      "pythonDLL": "python312.dll",
+      "pythonDLL": "python310.dll",
       "commandPostInstall": {
         "win32": "rc wrappers\\wrapper.rc && cl /DPYTHON_PATH=\"{{ properties.pythonPath }}\" /DPYTHON_DLL=\"{{ properties.pythonDLL }}\" /I {{ properties.pythonPath }}\\include wrappers\\wrapper.c wrappers\\wrapper.res /Fe:content\\bin\\conan.exe /link /LIBPATH:{{ properties.pythonPath }} /DELAYLOAD:{{ properties.pythonDLL }}",
         "linux": "cp wrappers/conan content/bin/conan",
@@ -73,7 +73,7 @@
     },
     "devDependencies": {
       "@mmomtchev/python-xpack": {
-        "specifier": "3.12.3-2",
+        "specifier": "3.10.14-1",
         "local": "link",
         "platforms": "all"
       }

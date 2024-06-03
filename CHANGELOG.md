@@ -1,3 +1,8 @@
+# 2.3.2-4 2024-06-03
+  * Downgrade Python to 3.10 for various reasons (`distutils` being the most important)
+  * Implement the `PyInstaller` protocol
+  * Ensure precedence over a pip-installed `conan`
+
 # 2.3.2-3 2024-05-31
   * Include an `.exe` wrapper on Windows
   * Do not exit without executing the command on the first invocation when creating the profile
