@@ -1,3 +1,6 @@
+# 2.3.2-5 2024-06-26
+  * Use `npm_package_json` as a starting point instead of `npm_local_prefix` when searching for the Python DLL on Windows
+
 # 2.3.2-4 2024-06-03
   * Downgrade Python to 3.10 for various reasons (`distutils` being the most important)
   * Implement the `PyInstaller` protocol
