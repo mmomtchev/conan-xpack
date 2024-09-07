@@ -51,7 +51,7 @@
       "conan": "./.content/bin/conan"
     },
     "properties": {
-      "versionConan": "2.3.2",
+      "versionConan": "2.7.0",
       "commandInstall": "python -m pip install --target content conan=={{ properties.versionConan }}",
       "pythonPath": "xpacks/@mmomtchev/python-xpack/.content",
       "pythonDLL": "python310.dll",
