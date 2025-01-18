@@ -1,3 +1,6 @@
+# 2.10.1-1 2025-01-18
+  * Update `conan` to 2.10.1 
+
 # 2.3.2-5 2024-06-26
   * Use `npm_package_json` as a starting point instead of `npm_local_prefix` when searching for the Python DLL on Windows
 
