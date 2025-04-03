@@ -1,0 +1,9 @@
+/content
+/xpacks
+node_modules
+.github
+.vscode
+
+*.obj
+*.exe
+*.res
