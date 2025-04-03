@@ -1,3 +1,6 @@
+# 2.15.0-1 2025-04-03
+  * Update `conan` to 2.15.0
+
 # 2.10.1-1 2025-01-18
   * Update `conan` to 2.10.1
   * Drop macOS 12 support 
