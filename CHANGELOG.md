@@ -1,3 +1,6 @@
+# 2.16.1-1 2025-05-28
+  * Update `conan` to 2.16.1 (Apple clang 17 support)
+
 # 2.15.0-1 2025-04-03
   * Update `conan` to 2.15.0
 
