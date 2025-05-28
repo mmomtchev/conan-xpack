@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/conan-xpack",
-  "version": "2.15.0-1",
+  "version": "2.16.1-1",
   "description": "A xPack with conan",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -29,23 +29,23 @@
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "conan-xpack-2.15.0-1-darwin-arm64.tar.gz",
-          "sha256": "966fdd35dc5e438bf869bd6e10dcca655ff0e4f74d36b81a424ba649a38879f3"
+          "fileName": "conan-xpack-2.16.1-1-darwin-arm64.tar.gz",
+          "sha256": "52f26ee42ba45914b69f757249f1f806bb6dc0453a2d0f8131034b3ed3dd23fd"
         },
         "darwin-x64": {
-          "fileName": "conan-xpack-2.15.0-1-darwin-x64.tar.gz",
-          "sha256": "48b04c7e1e9da646089eb24da87acbfca16c741fe1f4434e1f4d8a3a8f2ad391"
+          "fileName": "conan-xpack-2.16.1-1-darwin-x64.tar.gz",
+          "sha256": "2093d8522a7ea13c0afd1b974b4193a94b1b83dafc7ec5fd2c92813fc2faf0f3"
         },
         "linux-x64": {
-          "fileName": "conan-xpack-2.15.0-1-linux-x64.tar.gz",
-          "sha256": "533fa5ba10fc19508e8d33fa5eb66c188667f74e77e2454577f317bb65e3a0af"
+          "fileName": "conan-xpack-2.16.1-1-linux-x64.tar.gz",
+          "sha256": "0ee41fd394cc84c18c283696763f883702483de52aa851246f0c0893beb4d1f8"
         },
         "win32-x64": {
-          "fileName": "conan-xpack-2.15.0-1-win32-x64.zip",
-          "sha256": "42d82669700a867d9f772690a9570b3505b2e5ef87c135002b594bfac035942d"
+          "fileName": "conan-xpack-2.16.1-1-win32-x64.zip",
+          "sha256": "78ca8eaf9e9087520a67b5d66a7a375c290881e03cea8304532674a0689c52c3"
         }
       },
-      "baseUrl": "https://github.com/mmomtchev/conan-xpack/releases/download/v2.15.0-1"
+      "baseUrl": "https://github.com/mmomtchev/conan-xpack/releases/download/v2.16.1-1"
     },
     "bin": {
       "conan": "./.content/bin/conan"
