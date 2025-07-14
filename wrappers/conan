@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Remember to never use double quotes here
+# This should work even with "
 
 import re
 import sys

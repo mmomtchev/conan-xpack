@@ -82,7 +82,8 @@ const char freeze[] = "import sys\nsetattr(sys, 'frozen', True)\n";
 char *get_python_code() {
   HRSRC hResource = NULL;
   HGLOBAL hMemory = NULL;
-  char *text, *result, *mypath;
+  char *text, *result, *mypath, *escaped;
+  char *in, *out;
   size_t text_len, init_file_len;
 
   hResource = FindResource(NULL, MAKEINTRESOURCEA(101), "TEXT");
@@ -97,8 +98,17 @@ char *get_python_code() {
     strlen(freeze) + SizeofResource(NULL, hResource) + 10;
 
   text = LockResource(hMemory);
+  escaped = malloc(MAX_CMDLINE);
+  for (in = text, out = escaped; *in; in++, out++) {
+    if (*in == '"') {
+      *(out++) = '\\';
+    }
+    *out = *in;
+  }
+  *out = 0;
+
   result = malloc(init_file_len);
-  snprintf(result, init_file_len, "__file__ = r'%s'\n%s\n%s", mypath, freeze, text);
+  snprintf(result, init_file_len, "__file__ = r'%s'\n%s\n%s", mypath, freeze, escaped);
 
   return result;
 }
