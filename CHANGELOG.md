@@ -1,3 +1,6 @@
+#
+  * New Windows script launcher that is independent of the installed Python version
+
 # 2.16.1-1 2025-05-28
   * Update `conan` to 2.16.1 (Apple clang 17 support)
 
