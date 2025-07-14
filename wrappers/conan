@@ -7,8 +7,6 @@ import re
 import sys
 import os
 
-print('Launching conan')
-
 if 'CONAN_HOME' not in os.environ:
     user_home = os.environ['HOME'] if 'HOME' in os.environ else '/tmp'
     if sys.platform == 'linux':
