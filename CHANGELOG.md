@@ -1,4 +1,5 @@
-#
+# 2.18.1-1 2025-07-14
+  * Update `conan` to 2.18.1
   * New Windows script launcher that is independent of the installed Python version
 
 # 2.16.1-1 2025-05-28
