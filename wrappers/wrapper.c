@@ -2,6 +2,8 @@
 #include <windows.h>
 #include <stdio.h>
 
+#define MAX_CMDLINE 32768
+
 void ErrorExit(const char *fn) {
   char *error;
   DWORD dw = GetLastError();
@@ -106,10 +108,15 @@ int main(int argc, char *argv[]) {
   int i;
 
   code = get_python_code();
-  cmd = malloc(8192);
-  snprintf(cmd, 8192, "python -c \"%s\"", code);
+  cmd = malloc(MAX_CMDLINE);
+  snprintf(cmd, MAX_CMDLINE, "python -c \"%s\"", code);
   for (i = 1; i < argc; i++)
-    snprintf(cmd + strlen(cmd), 8191 - strlen(cmd), " %s", argv[i]);
+    snprintf(cmd + strlen(cmd), MAX_CMDLINE - strlen(cmd), " %s", argv[i]);
+
+  if (strlen(cmd) >= MAX_CMDLINE - 1) {
+    fprintf(stderr, "Command line too long, limited to %d characters\n", MAX_CMDLINE - 1);
+    exit(1);
+  }
 
   return create_and_wait_for_subprocess(cmd);
 }
