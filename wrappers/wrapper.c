@@ -100,6 +100,11 @@ char *get_python_code() {
   text = LockResource(hMemory);
   escaped = malloc(MAX_CMDLINE);
   for (in = text, out = escaped; *in; in++, out++) {
+    if (*in == '\\' && *(in+1) == '"') {
+      *(out++) = '\\';
+      *(out++) = '\\';
+      in++;
+    }
     if (*in == '"') {
       *(out++) = '\\';
     }
