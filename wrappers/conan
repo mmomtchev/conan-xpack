@@ -32,7 +32,7 @@ from conans import conan
 
 if 'profile' not in sys.argv and not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):
     import subprocess
-    r = subprocess.run([__file__, 'profile', 'detect'])
+    r = subprocess.run(['python.cmd', __file__, 'profile', 'detect'])
     if r.returncode != 0:
         sys.exit(r.returncode)
 
