@@ -1,3 +1,6 @@
+# 2.18.1-2
+  * New Windows script launcher using the Python `pypa` method
+
 # 2.18.1-1 2025-07-14
   * Update `conan` to 2.18.1
   * New Windows script launcher that is independent of the installed Python version
