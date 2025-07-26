@@ -1,4 +1,4 @@
-# 2.18.1-2
+# 2.18.1-2 2025-07-25
   * New Windows script launcher using the Python `pypa` method
 
 # 2.18.1-1 2025-07-14
