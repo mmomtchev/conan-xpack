@@ -51,7 +51,7 @@
       "conan": "./.content/bin/conan"
     },
     "properties": {
-      "versionConan": "2.18.1",
+      "versionConan": "2.21.1",
       "commandInstall": "python -m pip install --target content conan=={{ properties.versionConan }}",
       "commandPostInstall": {
         "win32": "copy wrappers\\conan content\\bin\\conan && cl wrappers\\wrapper.c /Fe:content\\bin\\conan.exe /link",

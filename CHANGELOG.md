@@ -1,4 +1,5 @@
-# 2.18.1-3
+# 2.21.1-1
+  * Update `conan` to 2.21.1
   * Provide `arm64` binaries for Windows and Linux
 
 # 2.18.1-2 2025-07-25
