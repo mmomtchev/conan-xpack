@@ -1,4 +1,4 @@
-# 2.22.1-1
+# 2.22.1-1 2025-11-04
   * Update `conan` to 2.22.1
   * Provide `arm64` binaries for Windows and Linux
 
