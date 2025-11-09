@@ -21,18 +21,21 @@ if 'CONAN_HOME' not in os.environ:
 else:
     conan_home = os.environ['CONAN_HOME']
 
-print(f'conan building packages in {conan_home}', file=sys.stderr)
-print('  This directory can grow to a considerable size', file=sys.stderr)
-
 file_path = os.path.realpath(__file__)
 sys.path.insert(0, os.path.dirname(os.path.dirname(file_path)))
 from conans import conan
 
 if 'profile' not in sys.argv and not os.path.exists(os.path.join(conan_home, 'profiles', 'default')):
     import subprocess
-    r = subprocess.run([sys.executable, __file__, 'profile', 'detect'])
+    r = subprocess.run(
+            [sys.executable, __file__, 'profile', 'detect'],
+            stdin=None, stdout=sys.stderr, stderr=sys.stderr
+        )
     if r.returncode != 0:
         sys.exit(r.returncode)
+else:
+    print(f'conan building packages in {conan_home}', file=sys.stderr)
+    print('  This directory can grow to a considerable size', file=sys.stderr)
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
