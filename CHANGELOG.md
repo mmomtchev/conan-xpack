@@ -1,3 +1,6 @@
+#
+  * Drop macOS <15 support
+
 # 2.22.1-2 2025-11-09
   * Use `stderr` as output when initializing `conan` for the first time
 
