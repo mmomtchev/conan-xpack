@@ -29,7 +29,7 @@ jobs:
           python-version: '3.12'       
       - uses: ilammy/msvc-dev-cmd@v1
         if: runner.os == 'Windows'
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - name: Get conan version and Node.js arch name
@@ -64,7 +64,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - name: Get conan version
