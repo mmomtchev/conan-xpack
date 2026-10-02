@@ -1,5 +1,7 @@
-#
+# 2.33.0-1 2026-10-02
   * Drop macOS <15 support
+  * macOS 26 support
+  * Windows Visual Studio 2026 support
 
 # 2.22.1-2 2025-11-09
   * Use `stderr` as output when initializing `conan` for the first time
