@@ -1,6 +1,6 @@
 {
   "name": "@mmomtchev/conan-xpack",
-  "version": "2.22.1-2",
+  "version": "2.33.0-1",
   "description": "A xPack with conan",
   "scripts": {
     "postversion": "git push && git push --tags && node ./publish.mjs"
@@ -29,31 +29,31 @@
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "conan-xpack-2.22.1-2-darwin-arm64.tar.gz",
-          "sha256": "8d2932857931d8427ff708c56266393d3e08e8fee4af0254dae577065a02098f"
+          "fileName": "conan-xpack-2.33.0-1-darwin-arm64.tar.gz",
+          "sha256": "93f1c73fb0a7fc8ee6fa63e31766bc0a9f56e38658012ec4175f20319e7af7b2"
         },
         "darwin-x64": {
-          "fileName": "conan-xpack-2.22.1-2-darwin-x64.tar.gz",
-          "sha256": "a33ab1c233ef6bef973e3456b340a46f121058b782fd0ca955b47617124bb85c"
+          "fileName": "conan-xpack-2.33.0-1-darwin-x64.tar.gz",
+          "sha256": "046f64de22b5fc3876c68d8b87062007c307880cb8638978f5b56d706f85ce9a"
         },
         "linux-x64": {
-          "fileName": "conan-xpack-2.22.1-2-linux-x64.tar.gz",
-          "sha256": "c816c8bc69512727729a9af6dd79041dedbb85a2db2d9268e2a2bd675a5a74ea"
+          "fileName": "conan-xpack-2.33.0-1-linux-x64.tar.gz",
+          "sha256": "cdf001341142fb7e106c18f84fe4ef2480d75f6a17b3474b1df4a8b9274d3793"
         },
         "win32-x64": {
-          "fileName": "conan-xpack-2.22.1-2-win32-x64.zip",
-          "sha256": "448142be412d7a66997629747a76d95d0891ba041bb7039e5c3e2e97bfcb38dd"
+          "fileName": "conan-xpack-2.33.0-1-win32-x64.zip",
+          "sha256": "949e3881a275f6f22b45f5aff891e2a6a04aaabf23c58feafeecccbef618daa2"
         },
         "linux-arm64": {
-          "fileName": "conan-xpack-2.22.1-2-linux-arm64.tar.gz",
-          "sha256": "da1e31fbb51292436c13c207e35cbe2c2b4f2923282550f242bca427d746d631"
+          "fileName": "conan-xpack-2.33.0-1-linux-arm64.tar.gz",
+          "sha256": "8ebbb4ffb202881e046fc5d780cdaff6f1f0d6e280e92a317e8c32bc2b2a453e"
         },
         "win32-arm64": {
-          "fileName": "conan-xpack-2.22.1-2-win32-arm64.zip",
-          "sha256": "9fad5590c69a272a678edabcf29a83bd9e68d0d5cf9df586785fdf0efbe7c47b"
+          "fileName": "conan-xpack-2.33.0-1-win32-arm64.zip",
+          "sha256": "fa32a3f701df70a523007987ac2bacd0a1dd78e12fd29406083d904c8ef4470b"
         }
       },
-      "baseUrl": "https://github.com/mmomtchev/conan-xpack/releases/download/v2.22.1-2"
+      "baseUrl": "https://github.com/mmomtchev/conan-xpack/releases/download/v2.33.0-1"
     },
     "bin": {
       "conan": "./.content/bin/conan"
